@@ -83,16 +83,19 @@ Each contract has a location on a one-dimensional ring derived from the hash
 of its code and parameters, and is replicated on peers near that location. Requests are routed using a per-neighbor,
 distance-indexed performance model rather than topological distance alone. For
 private state, the platform provides \emph{delegates}: local WebAssembly agents
-that hold secrets on the user's device and interact with contracts and other
-software through attributed messages.
+that hold secrets on the user's device, act on contracts on the user's behalf, and
+exchange messages with user interfaces and other delegates, each tagged with
+its sender's identity.
 
 This architecture targets decentralized applications such as group chat,
 collaborative documents, social feeds, and reputation systems, where
 availability and application-defined convergence are preferable to global
 linearizability.
 The paper describes the architecture implemented in the freenet-core reference
-runtime and presents a 24-hour snapshot of routing behavior on the deployed
-network. It also identifies deployed, experimental, and unimplemented mechanisms.
+runtime, a method for testing contracts against the merge laws on states observed
+on the network, and a 24-hour snapshot of routing behavior on the deployed
+network (predating the current routing estimator). It also identifies which mechanisms are deployed, implemented but not yet broadly
+exercised, experimental, or not yet implemented.
 \end{abstract}
 
 \vspace{0.5em}
